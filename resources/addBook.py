@@ -1,6 +1,8 @@
 import random
 import string
 
+from schema import Schema
+
 addBookResource = '/Library/Addbook.php'
 
 # exist book
@@ -10,7 +12,10 @@ addBookExistBookBody = {
                             "aisle":"1986",
                             "author":"Itay Zis"
                             }
-existBookMsgResponse ='Add Book operation failed, looks like the book already exists'
+existBookMsgResponse = 'Add Book operation failed, looks like the book already exists'
+addBookExistBookSchema = Schema({
+                                "msg": str
+                                })
 
 # new book
 addBookNewBookBody = {
@@ -21,6 +26,10 @@ addBookNewBookBody = {
                             }
 newBookMsgResponse = 'successfully added'
 newBookIdResponse = addBookNewBookBody['isbn']+addBookNewBookBody['aisle']
+addBookNewBookSchema = Schema({
+                                "Msg": str,
+                                "ID": str
+                                })
 
 
 
