@@ -21,7 +21,7 @@ addBookExistBookSchema = Schema({
 addBookNewBookBody = {
                              "name": "Learn Appium Automation with Java",
                             "isbn": ''.join(random.choice(string.ascii_lowercase) for i in range(10)),
-                            "aisle": "1986",
+                            "aisle": ''.join(random.choice(string.digits) for i in range(4)),
                             "author": "Itay Zis"
                             }
 newBookMsgResponse = 'successfully added'
